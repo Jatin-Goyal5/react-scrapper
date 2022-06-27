@@ -1,0 +1,15 @@
+# dependencies
+.next/
+.vscode/
+.git/
+node_modules/
+*.log
+coverage/
+build/testcoverage.txt
+# misc
+.env
+*..DS_Store
+.DS_Store
+package-lock.json
+yarn.lock
+.idea/
