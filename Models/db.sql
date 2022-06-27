@@ -6,6 +6,6 @@ CREATE TABLE blogs (
     details Varchar,
     link VARCHAR,
     preview VARCHAR, 
-    relatedTags Varchar
+    relatedTags Varchar,
     post Varchar
 );

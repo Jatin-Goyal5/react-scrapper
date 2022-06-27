@@ -1,10 +1,9 @@
-const Pool = require('pg').Pool;
-
+const {Pool} = require('pg');
+const { db_secrets } = require('../secrets/secrets');
 const db = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'blogs',
-    password: '123456789',
-    port: 5432,
-  })
+ connectionString: db_secrets,
+  ssl: {
+ rejectUnauthorized: false
+ }
+});
 module.exports = db;
