@@ -4,7 +4,7 @@ const axios = require('axios');
 class Post {
     link;
     post =[];
-    constructor(link,) {
+    constructor(link) {
         this.link = link;
     }
 

@@ -14,6 +14,7 @@ class Blog {
     try {
       let checkTag = await this.isAvailable();
       if(checkTag == false){
+        console.log(checkTag);
         await this.crawlBlogs();
         for (let i = 0; i < this.blogList.length; i++) {
           await db.query(
@@ -30,13 +31,14 @@ class Blog {
           ])
         }
         
+      }else{
+        const result = await db.query(
+          `select * from blogs where tag = $1 limit 10 `,
+          [this.tag]
+        );
+        this.blogList = result.rows;
       }
 
-      const result = await db.query(
-        `select * from blogs where tag = $1 `,
-        [this.tag]
-      );
-      this.blogList = result.rows;
 
       return this.blogList;
      
